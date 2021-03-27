@@ -17,16 +17,20 @@ public abstract class IEvent<Listener> {
     /**
      * Add a listener to the list
      * @param listener the listener that will be added
+     * @throws NullPointerException if the listener is null
      */
-    public void addListener(Listener listener) {
+    public void addListener(Listener listener) throws NullPointerException {
+        if(listener == null) throw new NullPointerException("Failed to add listener!");
         listeners.add(listener);
     }
 
     /**
      * Remove a listener from the list
      * @param listener the listener that will be removed
+     * @throws NullPointerException if the listener is null
      */
-    public void removeListener(Listener listener) {
+    public void removeListener(Listener listener) throws NullPointerException {
+        if(listener == null) throw new NullPointerException("Failed to add listener!");
         listeners.remove(listener);
     }
 
